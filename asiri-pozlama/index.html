@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aşırı Pozlama — ŞEFFAF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ortak/stil.css">
+<style>
+  body { background: #efe9dc; color: #0b2546; }
+  .ortu { background: rgba(239, 233, 220, 0.94); --dugme-zemin: #163f70; --dugme-yazi: #efe9dc; }
+</style>
+</head>
+<body>
+<canvas class="sahne" id="sahne"></canvas>
+<video class="gizli" id="video" playsinline muted></video>
+
+<div class="ortu" id="ortu">
+  <div class="icerik">
+    <p class="ust">ŞEFFAF · I · “Teşhir Toplumu” üzerine</p>
+    <h1>Aşırı Pozlama</h1>
+    <p>Bu yüzey ışığa duyarlı bir kâğıt. Önüne geçtiğinde baskın alınır.</p>
+    <p>Öne çık. Yüzünü göster. Görünür ol.</p>
+    <div class="dugmeler">
+      <button class="ana" id="basla">Görünmek için izin ver</button>
+      <a class="ince" id="demo" href="?demo=1">kamerasız dene (fare)</a>
+    </div>
+    <p class="durum" id="durum"></p>
+    <p class="not">Kamera görüntüsü yalnızca bu tarayıcıda işlenir. Hiçbir kare kaydedilmez, hiçbir yere gönderilmez.<br>
+    F tam ekran · D ayar paneli · R sıfırla · + / − pozlama hızı</p>
+  </div>
+</div>
+
+<div class="hata-ayikla" id="panel"></div>
+<a class="geri" href="../">← ŞEFFAF</a>
+<script type="module" src="main.js"></script>
+</body>
+</html>

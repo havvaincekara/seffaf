@@ -1,0 +1,47 @@
+:root {
+  --siyano: #163f70;
+  --siyano-koyu: #0b2546;
+  --kagit: #efe9dc;
+  --gece: #040a14;
+  --cizgi: #c8defc;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; cursor: default; }
+body { font-family: var(--mono); -webkit-font-smoothing: antialiased; }
+canvas.sahne { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+video.gizli { position: fixed; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+body.calisiyor { cursor: none; }
+
+/* Başlangıç örtüsü */
+.ortu {
+  position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+  z-index: 10; transition: opacity 1.2s ease;
+}
+.ortu.kapandi { opacity: 0; pointer-events: none; }
+.ortu .icerik { max-width: 34rem; padding: 2rem; }
+.ortu .ust { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; margin: 0 0 1.6rem; }
+.ortu h1 { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1; margin: 0 0 1.2rem; letter-spacing: -0.01em; }
+.ortu p { font-family: var(--serif); font-size: 1.25rem; line-height: 1.45; margin: 0 0 1rem; }
+.ortu .not { font-family: var(--mono); font-size: 0.74rem; line-height: 1.6; opacity: 0.75; margin-top: 1.6rem; }
+.ortu .dugmeler { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.8rem; align-items: center; }
+.ortu button, .ortu a.dugme {
+  font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.08em; padding: 0.85rem 1.4rem;
+  border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; text-decoration: none;
+}
+.ortu button.ana { background: var(--dugme-zemin, #111); color: var(--dugme-yazi, #fff); border-color: var(--dugme-zemin, #111); }
+.ortu a.ince { font-size: 0.75rem; color: inherit; opacity: 0.7; }
+.ortu .durum { font-size: 0.75rem; margin-top: 1rem; min-height: 1.2em; opacity: 0.85; }
+.ortu .hata { color: #b3261e; }
+
+/* Hata ayıklama paneli (D tuşu) */
+.hata-ayikla {
+  position: fixed; right: 12px; bottom: 12px; z-index: 20; display: none;
+  background: rgba(0,0,0,0.72); color: #cfe; font: 11px/1.5 var(--mono); padding: 8px; max-width: 280px; white-space: pre;
+}
+.hata-ayikla video { width: 256px; transform: scaleX(-1); display: block; margin-bottom: 6px; }
+.hata-ayikla.acik { display: block; }
+
+.geri { position: fixed; left: 14px; bottom: 12px; z-index: 11; font: 11px var(--mono); opacity: 0.45; color: inherit; text-decoration: none; letter-spacing: 0.1em; }
+body.calisiyor .geri { display: none; }
